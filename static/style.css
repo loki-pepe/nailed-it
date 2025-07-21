@@ -5,6 +5,21 @@
 }
 
 :root {
+    /* Colors */
+    --brick: hsl(10 34% 51%);
+    --brick-transparent: hsl(12 44% 47% / 30%);
+    --ebony-clay: hsl(218 21% 18%);
+    --white: hsl(0 0% 100%);
+
+    --body-bg-color: var(--white);
+    --body-color: var(--ebony-clay);
+    --body-bg-color-inverted: var(--brick);
+    --body-color-inverted: var(--white);
+    --button-bg-color: var(--brick);
+    --button-color: var(--white);
+    --button-bg-color-inverted: var(--white);
+    --button-color-inverted: var(--brick);
+
     /* Font family */
     --body-font: "League Spartan", Tahoma, sans-serif;
 
@@ -66,6 +81,7 @@
 
 address a {
     text-decoration: none;
+    color: inherit;
 }
 
 address {
@@ -78,6 +94,8 @@ body {
     font-size: var(--body-font-size);
     font-weight: var(--body-font-weight);
     letter-spacing: var(--body-letter-spacing);
+    color: var(--body-color);
+    background-color: var(--body-bg-color);
 }
 
 .button {
@@ -85,6 +103,12 @@ body {
     font-weight: var(--button-font-weight);
     letter-spacing: var(--button-letter-spacing);
     text-decoration: none;
+    background-color: var(--button-bg-color);
+    color: var(--button-color);
+}
+.inverted .button {
+    background-color: var(--button-bg-color-inverted);
+    color: var(--button-color-inverted);
 }
 
 em {
@@ -130,6 +154,11 @@ img, svg {
     max-width: 100%;
 }
 
+.inverted {
+    color: var(--body-color-inverted);
+    background-color: var(--body-bg-color-inverted);
+}
+
 li {
     font-size: var(--li-font-size);
 }
@@ -137,6 +166,10 @@ li {
 .logo {
     height: var(--logo-height);
     width: auto;
+}
+
+.logo path {
+    fill: var(--white);
 }
 
 .sr-only {
