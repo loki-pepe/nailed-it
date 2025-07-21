@@ -4,6 +4,57 @@
     font-style: normal;
 }
 
+:root {
+    /* Font family */
+    --body-font: "League Spartan", Tahoma, sans-serif;
+
+    /* Font sizes */
+    --heading-xl: clamp(2rem, 4.507vw + .9437rem, 5rem);
+    --heading-l: clamp(2rem, 4.0712vw + 1.0458rem, 3rem);
+    --heading-m: 1.25rem;
+    --heading-s: 1.0625rem;
+    --body: clamp(1rem, 1.0178vw + .7615rem, 1.25rem);
+    --body-fixed: 1rem;
+    --footer: 0.875rem;
+
+    --elongated-font-size: var(--heading-xl);
+    --h2-font-size: var(--heading-l);
+    --h3-font-size: var(--heading-m);
+    --button-font-size: var(--heading-s);
+    --body-font-size: var(--body);
+    --li-font-size: var(--body-fixed);
+    --footer-font-size: var(--footer);
+
+    /* Font weights */
+    --light: 300;
+    --regular: 400;
+    --semi-bold: 600;
+    --bold: 700;
+
+    --elongated-font-weight: var(--light);
+    --h2-font-weight: var(--bold);
+    --h3-font-weight: var(--bold);
+    --body-font-weight: var(--regular);
+    --button-font-weight: var(--semi-bold);
+
+    /* Line heights */ /* brojke su za pocetak samo za desktop */
+    --h2-line-height: 1;
+    --h3-line-height: 1.2;
+    --body-line-height: clamp(1.5, -.0318vw + 1.7443px, 1.625);
+    --footer-line-height: 2;
+
+    /* Letter spacings */
+    --elongated-letter-spacing: clamp(-1px, -.0563vw + -.1887px, -.4px);
+    --h2-letter-spacing: clamp(-.5px, -.0254vw + -.3046px, -.4px);
+    --h3-letter-spacing: -0.25px;
+    --body-letter-spacing: 0;
+    --button-letter-spacing: 2.5px;
+    --footer-letter-spacing: 2px;
+
+    /* Sizing */
+    --logo-height: clamp(32px, 2.0356vw + 24.3664px, 40px);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -13,11 +64,87 @@
     margin: 0;
 }
 
+address a {
+    text-decoration: none;
+}
+
+address {
+    font-style: inherit;
+}
+
 body {
     min-height: 100vh;
+    font-family: var(--body-font);
+    font-size: var(--body-font-size);
+    font-weight: var(--body-font-weight);
+    letter-spacing: var(--body-letter-spacing);
+}
+
+.button {
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    letter-spacing: var(--button-letter-spacing);
+    text-decoration: none;
+}
+
+em {
+    font-style: normal;
+}
+
+footer {
+    font-size: var(--footer-font-size);
+    letter-spacing: var(--footer-letter-spacing);
+    line-height: var(--footer-line-height);
+    text-transform: uppercase;
+}
+
+footer h2 {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--h2-font-weight);
+    line-height: var(--h2-line-height);
+    letter-spacing: var(--h2-letter-spacing);
+}
+
+h2.elongated {
+    font-size: var(--elongated-font-size);
+    font-weight: var(--elongated-font-weight);
+    letter-spacing: var(--elongated-letter-spacing);
+}
+
+h3 {
+    font-size: var(--button-font-size);
+    font-weight: var(--h3-font-weight);
+    line-height: var(--h3-line-height);
+    letter-spacing: var(--h3-letter-spacing);
 }
 
 img, svg {
     display: block;
     max-width: 100%;
+}
+
+li {
+    font-size: var(--li-font-size);
+}
+
+.logo {
+    height: var(--logo-height);
+    width: auto;
+}
+
+.sr-only {
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
