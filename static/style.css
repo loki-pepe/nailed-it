@@ -181,3 +181,10 @@ li {
   white-space: nowrap;
   width: 1px;
 }
+
+.with-divide::before {
+    content: url("./assets/images/patterns/pattern-divide.svg");
+}
+.inverted .with-divide::before {
+    content: url("./assets/images/patterns/pattern-divide-inverted.svg");
+}
