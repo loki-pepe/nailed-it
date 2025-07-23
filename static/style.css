@@ -274,6 +274,7 @@ svg {
 @media (min-width: 75rem) {
 
     :root {
+        --overlap: -70px;
         --padding-top-services: 200px;
     }
 
@@ -290,6 +291,13 @@ svg {
     }
     .flex-container.reverse {
         flex-direction: row-reverse;
+    }
+
+    header.flex-container {
+        padding-block: 48px 216px; /*temp*/
+        row-gap: 160px; /*temp*/
+        flex-direction: column;
+        align-items: start;
     }
 
     .major-text {
