@@ -87,6 +87,7 @@
     --padding-inline-main: clamp(24px, 13.2394vw + -25.6479px, 165px);
     --padding-top-services: clamp(72px, 8.6514vw + 39.5573px, 106px);
     --padding-bottom-services: clamp(96px, 3.5714vw + 68.5714px, 120px);
+    --services-row-gap: 80px;
 
     /* Shadow */
     --shadow: 0 75px 100px -50px var(--shadow-blue);
@@ -252,6 +253,7 @@ li {
 .services {
     padding-block-start: var(--padding-top-services);
     padding-block-end: var(--padding-bottom-services);
+    row-gap: var(--services-row-gap);
 }
 
 .sr-only {
