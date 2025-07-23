@@ -81,6 +81,9 @@
     --margin-bottom-card: clamp(101px, 4.3257vw + 84.7786px, 118px);
     --margin-bottom-h2: clamp(13px, 3.5623vw + -.3588px, 27px);
     --overlap: calc(clamp(72px, 6.1069vw + 49.0992px, 96px) * -1);
+    --padding-block-button: 24px;
+    --padding-inline-button: 37px;
+    --margin-top-button: 70px;
     --padding-inline-main: clamp(24px, 13.2394vw + -25.6479px, 165px);
     --padding-top-services: clamp(72px, 8.6514vw + 39.5573px, 106px);
     --padding-bottom-services: clamp(96px, 3.5714vw + 68.5714px, 120px);
@@ -131,9 +134,9 @@ body {
     background-color: var(--button-bg-color);
     color: var(--button-color);
     text-transform: uppercase;
-    padding-block: 24px;
-    padding-inline: 37px;
-    margin-top: 70px;
+    padding-block: var(--padding-block-button);
+    padding-inline: var(--padding-inline-button);
+    margin-block-start: var(--margin-top-button);
 }
 .inverted-color .button {
     background-color: var(--button-bg-color-inverted);
