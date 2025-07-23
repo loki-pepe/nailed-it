@@ -69,8 +69,10 @@
 
     /* Sizing */
     --business-content-flex-basis: 33.75rem;
+    --business-content-max-width: 35.8125rem;
     --logo-height: clamp(2rem, 2.0356vw + 1.5229rem, 2.5rem);
     --major-text-flex-basis: 27.8125rem;
+    --major-text-max-height: 28.5625rem;
 
     /* Spacing */
     --card-row-gap: clamp(48px, 2.0356vw + 40.3664px, 56px);
@@ -115,7 +117,7 @@ body {
 }
 
 .business-content {
-    max-width: 573px;
+    max-width: var(--business-content-max-width);
 }
 
 .button {
@@ -217,7 +219,7 @@ li {
 }
 
 .major-text {
-    max-width: 457px;
+    max-width: var(--major-text-max-height);
 }
 
 .major-text::before {
