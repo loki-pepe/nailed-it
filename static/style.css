@@ -22,6 +22,7 @@
     --button-color: var(--white);
     --button-bg-color-inverted: var(--white);
     --button-color-inverted: var(--brick);
+    --li-decoration-color: var(--white);
 
     /* Font family */
     --body-font: "League Spartan", Tahoma, sans-serif;
@@ -74,6 +75,7 @@
     --business-content-flex-basis: 33.75rem;
     --business-content-max-width: 35.8125rem;
     --li-img-width: 8rem;
+    --li-decoration-width: 32px;
     --logo-height: clamp(2rem, 2.0356vw + 1.5229rem, 2.5rem);
     --major-text-flex-basis: 27.8125rem;
     --major-text-max-width: var(--text-max-width);
@@ -88,8 +90,9 @@
     --footer-row-gap: 42px;
     --info-column-gap: var(--main-column-gap);
     --info-row-gap: 32px;
-    --li-column-gap: 30px;
+    --li-column-gap: calc(30px + var(--li-decoration-width));
     --li-row-gap: 36px;
+    --li-decoration-offset: 24px;
     --margin-bottom-divide: clamp(36px, 1.784vw + 29.3099px, 55px);
     --margin-bottom-card: clamp(101px, 4.3257vw + 84.7786px, 118px);
     --margin-bottom-h2: clamp(13px, 3.5623vw + -.3588px, 27px);
@@ -337,6 +340,10 @@ svg {
     display: block;
 }
 
+ul {
+    list-style: none;
+}
+
 @media (min-width: 48rem) {
     .flex-row {
         justify-content: start;
@@ -358,11 +365,20 @@ svg {
 
     li.flex-container {
         flex-direction: row;
-        justify-content: end;
     }
 
-    li.flex-container .img-wrapper {
+    li .img-wrapper {
         flex: 0 0 var(--li-img-width);
+        display: flex;
+    }
+    li .img-wrapper::after {
+        content: "";
+        display: block;
+        height: 1px;
+        flex: 0 0 var(--li-decoration-width);
+        background-color: var(--li-decoration-color);
+        position: relative;
+        top: var(--li-decoration-offset);
     }
 
     .services ul {
