@@ -25,7 +25,7 @@
         <section>
             <h2 class="elongated">Spoil yourself</h2>
             <dl class="dict">
-                <dt>nail <span>/neɪl/</span> <em>noun</em>:</dt>
+                <dt>nail <span>/neɪl/</span> <em>noun</em></dt>
                 <dd>one thing you can get into shape without exercise.</dd>
             </dl>
         </section>
@@ -67,29 +67,37 @@
             </div>
             <ul class="business-content">
                 <li class="flex-container">
-                    <img src="./static/assets/images/homepage/mani_pedi.png" alt="nalakirani nokti">
-                    <div>
+                    <div class="img-wrapper">
+                        <img src="./static/assets/images/homepage/mani_pedi.png" alt="nalakirani nokti">
+                    </div>
+                    <div class="minor-text">
                         <h3>Manikura i pedikura</h3>
                         <p>Our locally sourced salmon served with a refreshing buckwheat summer salad.</p>
                     </div>
                 </li>
                 <li class="flex-container">
-                    <img src="./static/assets/images/homepage/sminkanje.png" alt="pribor za Šminkanje">
-                    <div>
+                    <div class="img-wrapper">
+                        <img class="xyz" src="./static/assets/images/homepage/sminkanje.png" alt="pribor za Šminkanje">
+                    </div>
+                    <div class="minor-text">
                         <h3>Šminkanje</h3>
                         <p>Our prime beef served to your taste with a delicious choice of seasonal sides.</p>
                     </div>
                 </li>
                 <li class="flex-container">
-                    <img src="./static/assets/images/homepage/obrve_trepavice.png" alt="dio lica s urednom obrvom i trepavicama">
-                    <div>
+                    <div class="img-wrapper">
+                        <img src="./static/assets/images/homepage/obrve_trepavice.png" alt="dio lica s urednom obrvom i trepavicama">
+                    </div>
+                    <div class="minor-text">
                         <h3>Obrve i trepavice</h3>
                         <p>Creamy mousse combined with summer fruits and dark chocolate shavings.</p>
                     </div>
                 </li>
                 <li class="flex-container">
-                    <img src="./static/assets/images/homepage/depilacija.png" alt="depilirane noge">
-                    <div>
+                    <div class="img-wrapper">
+                        <img src="./static/assets/images/homepage/depilacija.png" alt="depilirane noge">
+                    </div>
+                    <div class="minor-text">
                         <h3>Depilacija</h3>
                         <p>Creamy mousse combined with summer fruits and dark chocolate shavings.</p>
                     </div>
@@ -101,9 +109,9 @@
         </section>
     </main>
     <footer class="inverted-color flex-container p-inline-main">
-        <div class="carousel">
-            <!-- Carousel -->
-        </div>
+        <!--div class="carousel">
+            Carousel
+        </div-->
         <p lang="en">
             <svg class="logo" role="img" aria-label="nailed it" width="191" height="41" viewBox="0 0 191 41" fill="" xmlns="http://www.w3.org/2000/svg" >
                 <path
@@ -113,28 +121,36 @@
             </svg>
             <span class="sr-only">nailed it</span>
         </p>
-        <address>
-            Fra Didaka Buntića<br>
-            Široki Brijeg<br>
-            <a href="tel:+38763239888">+387 63 239 888</a>
-        </address>
-        <section aria-labelledby="hours-heading">
-            <h2 id="hours-heading">Radno vrijeme</h2>
-            <dl class="hours">
-                <dt>Uto - Pet</dt>
-                <dd>
-                    <time datetime="08:00">08:00</time> - <time datetime="18:00">18:00</time>
-                </dd>
+        <div class="flex-container info">
+            <address>
+                Fra Didaka Buntića<br>
+                Široki Brijeg<br>
+                <a href="tel:+38763239888">+387 63 239 888</a>
+            </address>
+            <section aria-labelledby="hours-heading">
+                <h2 id="hours-heading">Radno vrijeme</h2>
+                <dl class="hours">
+                    <div class="flex-row">
+                        <dt>Uto - Pet</dt>
+                        <dd>
+                            <time datetime="08:00">08:00</time> - <time datetime="18:00">18:00</time>
+                        </dd>
+                    </div>
 
-                <dt>Sub</dt>
-                <dd>
-                    <time datetime="08:00">08:00</time> - <time datetime="16:00">16:00</time>
-                </dd>
+                    <div class="flex-row">
+                        <dt>Sub</dt>
+                        <dd>
+                            <time datetime="08:00">08:00</time> - <time datetime="16:00">16:00</time>
+                        </dd>
+                    </div>
 
-                <dt>Ned - Pon</dt>
-                <dd>Ne radimo</dd>
-            </dl>
-        </section>
+                    <div class="flex-row">
+                        <dt>Ned - Pon</dt>
+                        <dd>Ne radimo</dd>
+                    </div>
+                </dl>
+            </section>
+        </div>
     </footer>
 </body>
 </html>
