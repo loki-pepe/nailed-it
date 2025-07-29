@@ -218,11 +218,6 @@ footer {
 footer.flex-container {
     column-gap: var(--footer-column-gap);
     row-gap: var(--footer-row-gap);
-    /*
-    display: grid;                          if grid
-    row-gap: var(--footer-row-gap);
-    grid-template-columns: auto auto auto;
-    */
 }
 
 footer h2 {
@@ -275,7 +270,6 @@ img {
     row-gap: var(--info-row-gap);
     align-items: center;
     justify-content: start;
-    /*align-self: center;*/ /* if grid */
 }
 
 .inverted-color {
