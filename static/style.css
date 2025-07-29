@@ -5,6 +5,9 @@
 }
 
 :root {
+    /* Background positions */
+    --curve-top-right-position: right 384px top 78%;
+
     /* Colors */
     --brick: hsl(10 34% 51%);
     --brick-transparent: hsl(12 44% 47% / 30%);
@@ -184,6 +187,12 @@ body {
 
 .card img {
     box-shadow: var(--shadow);
+}
+
+.curve-top-right {
+    background-image: url("./assets/images/patterns/pattern-curve-top-right.svg");
+    background-repeat: no-repeat;
+    background-position: var(--curve-top-right-position);
 }
 
 dt::after {
@@ -405,6 +414,7 @@ ul {
         --overlap: -70px;
         --padding-block-footer: 78px;
         --padding-top-services: 200px;
+        --curve-top-right-position: -20px 75%;
     }
 
     body {
