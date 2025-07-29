@@ -74,6 +74,7 @@
     --text-max-width: 28.5625rem;
     --business-content-flex-basis: 33.75rem;
     --business-content-max-width: 35.8125rem;
+    --ig-logo-size: 1.5rem;
     --li-img-width: 8rem;
     --li-decoration-width: 32px;
     --logo-height: clamp(2rem, 2.0356vw + 1.5229rem, 2.5rem);
@@ -122,7 +123,18 @@
     margin: 0;
 }
 
+a.ig {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+a.ig svg {
+    width: var(--ig-logo-size);
+    aspect-ratio: 1;
+}
+
 address a {
+    display: block;
     text-decoration: none;
     color: inherit;
 }
