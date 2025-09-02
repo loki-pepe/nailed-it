@@ -6,8 +6,8 @@
 
 :root {
     /* Background positions */
-    --curve-1: -512px 68%;
-    --curve-2: bottom calc(-1 * var(--overlap)) right -512px;
+    --curve-1: -512px 56%;
+    --curve-2: right -512px bottom 0;
     --curve-3: -512px 0;
 
     /* Colors */
@@ -83,6 +83,7 @@
     --li-img-width: 8rem;
     --li-decoration-width: 32px;
     --logo-height: clamp(2rem, 2.0356vw + 1.5229rem, 2.5rem);
+    --major-img-tablet-height: 22.5rem;
     --major-text-flex-basis: 27.8125rem;
     --major-text-max-width: var(--text-max-width);
     --minor-text-max-width: var(--text-max-width);
@@ -160,7 +161,13 @@ body {
 }
 
 .business-content {
+    width: 100%;
     max-width: var(--business-content-max-width);
+}
+
+.business-content > img {
+    width: 100%;
+    height: 100%;
 }
 
 .button {
@@ -268,6 +275,7 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 .info.flex-container {
@@ -418,6 +426,12 @@ ul {
 
     .services ul {
         text-align: start;
+    }
+}
+
+@media (48rem <= width < 75rem) {
+    .business-content:has(> img) {
+        height: var(--major-img-tablet-height);
     }
 }
 
