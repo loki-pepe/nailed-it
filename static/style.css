@@ -6,7 +6,7 @@
 
 :root {
     /* Background positions */
-    --curve-1: -512px 56%;
+    --curve-1: -512px 42%;
     --curve-2: right -512px bottom 0;
     --curve-3: -512px 0;
 
@@ -191,6 +191,9 @@ body {
 .card {
     row-gap: var(--card-row-gap);
     column-gap: var(--card-column-gap);
+}
+
+.card .major-text {
     margin-block-end: var(--margin-bottom-card);
 }
 
@@ -449,6 +452,13 @@ ul {
 
     body {
         text-align: start;
+    }
+
+    .card {
+        margin-block-end: var(--margin-bottom-card);
+    }
+    .card .major-text {
+        margin-block-end: 0;
     }
 
     .business-content {
