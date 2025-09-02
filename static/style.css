@@ -6,7 +6,9 @@
 
 :root {
     /* Background positions */
-    --curve-top-right-position: right 384px top 78%;
+    --curve-1: -512px 68%;
+    --curve-2: bottom calc(-1 * var(--overlap)) right -512px;
+    --curve-3: -512px 0;
 
     /* Colors */
     --brick: hsl(10 34% 51%);
@@ -189,12 +191,6 @@ body {
     box-shadow: var(--shadow);
 }
 
-.curve-top-right {
-    background-image: url("./assets/images/patterns/pattern-curve-top-right.svg");
-    background-repeat: no-repeat;
-    background-position: var(--curve-top-right-position);
-}
-
 dt::after {
     content: ":";
 }
@@ -366,6 +362,24 @@ ul {
 }
 
 @media (min-width: 48rem) {
+    .curve-1 {
+        background-image: url("./assets/images/patterns/pattern-curve-top-right.svg");
+        background-repeat: no-repeat;
+        background-position: var(--curve-1);
+    }
+
+    .curve-2 {
+        background-image: url("./assets/images/patterns/pattern-curve-top-left.svg");
+        background-repeat: no-repeat;
+        background-position: var(--curve-2);
+    }
+
+    .curve-3 {
+        background-image: url("./assets/images/patterns/pattern-curve-top-right.svg");
+        background-repeat: no-repeat;
+        background-position: var(--curve-3);
+    }
+
     .flex-row {
         justify-content: start;
     }
@@ -414,7 +428,9 @@ ul {
         --overlap: -70px;
         --padding-block-footer: 78px;
         --padding-top-services: 200px;
-        --curve-top-right-position: -20px 75%;
+        --curve-1: 0 76%;
+        --curve-2: bottom calc(-1 * var(--overlap)) right 0;
+        --curve-3: -384px 0;
     }
 
     body {
