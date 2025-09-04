@@ -201,6 +201,10 @@ body {
     box-shadow: var(--shadow);
 }
 
+.cjenik header {
+    background: url("./assets/images/patterns/pattern-curve-top-right-cjenik.svg") no-repeat 0 60%, url("./assets/images/cjenik/header.png") no-repeat center/cover;
+}
+
 dt::after {
     content: ":";
 }
