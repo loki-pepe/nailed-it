@@ -427,6 +427,17 @@ ul {
         top: var(--li-decoration-offset);
     }
 
+    .lines {
+        position: relative;
+    }
+
+    .lines::after {
+        content: url("./assets/images/patterns/pattern-lines.svg");
+        position: absolute;
+        top: 48%;
+        left: 90%;
+    }
+
     .services ul {
         text-align: start;
     }
