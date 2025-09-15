@@ -18,16 +18,19 @@
     --shadow-blue: hsl(219 20% 28% / 50%);
     --transparent-white: hsl(0 0% 100% / 15%);
 
+    --theme-color: var(--brick);
+
     --body-bg-color: var(--white);
     --body-color: var(--ebony-clay);
-    --body-bg-color-inverted: var(--brick);
+    --body-bg-color-inverted: var(--theme-color);
     --body-color-inverted: var(--white);
     --border-color: var(--transparent-white);
-    --button-bg-color: var(--brick);
+    --button-bg-color: var(--theme-color);
     --button-color: var(--white);
     --button-bg-color-inverted: var(--white);
-    --button-color-inverted: var(--brick);
+    --button-color-inverted: var(--theme-color);
     --li-decoration-color: var(--white);
+    --price-list-color: var(--theme-color);
 
     /* Font family */
     --body-font: "League Spartan", Tahoma, sans-serif;
@@ -205,7 +208,7 @@ body {
     background: url("./assets/images/patterns/pattern-curve-top-right-cjenik.svg") no-repeat 0 60%, url("./assets/images/cjenik/header.png") no-repeat center/cover;
 }
 
-dt::after {
+dt:not(#price-list dt)::after {
     content: ":";
 }
 
@@ -349,6 +352,11 @@ li:last-child {
 
 .p-inline-main {
     padding-inline: var(--padding-inline-main);
+}
+
+#price-list {
+    color: var(--price-list-color);
+    border: 1px solid var(--price-list-color);
 }
 
 .services {
