@@ -198,6 +198,9 @@ body {
     background-color: var(--button-bg-color-inverted);
     color: var(--button-color-inverted);
 }
+.cjenik .button {
+    margin-block-end: var(--margin-top-button);
+}
 
 .card {
     row-gap: var(--card-row-gap);
