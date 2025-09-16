@@ -12,7 +12,8 @@
 
     /* Colors */
     --brick: hsl(10 34% 51%);
-    --brick-transparent: hsl(12 44% 47% / 30%);
+    --brick-dark: hsl(10 34% 44%); /**/
+    --brick-transparent: hsl(10 34% 51% / 0.5);
     --ebony-clay: hsl(218 21% 18%);
     --white: hsl(0 0% 100%);
     --shadow-blue: hsl(219 20% 28% / 50%);
@@ -30,7 +31,8 @@
     --button-bg-color-inverted: var(--white);
     --button-color-inverted: var(--theme-color);
     --li-decoration-color: var(--white);
-    --price-list-color: var(--theme-color);
+    --price-list-color: var(--theme-color); /*var(--brick-dark)*/
+    --price-list-bg-color: var(--white);
 
     /* Font family */
     --body-font: "League Spartan", Tahoma, sans-serif;
@@ -116,6 +118,12 @@
     --padding-top-services: clamp(72px, 8.6514vw + 39.5573px, 106px);
     --padding-bottom-services: clamp(96px, 3.5714vw + 68.5714px, 120px);
     --padding-block-li: 24px;
+    --price-item-gap: 32px;
+    --price-item-padding: 4px 6px;
+    --price-list-margin-inline: clamp(16px, 4.507vw + -.9014px, 64px);
+    --price-list-padding: 32px clamp(16px, 4.507vw + -.9014px, 64px);
+    --price-list-column-gap: clamp(40px, 7.3529vw + -25.8824px, 80px);
+    --price-list-section-margin-bottom: 32px;
     --services-row-gap: 80px;
     --services-column-gap: var(--main-column-gap);
 
@@ -354,9 +362,35 @@ li:last-child {
     padding-inline: var(--padding-inline-main);
 }
 
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--price-item-gap);
+    padding: var(--price-item-padding);
+    border-bottom: 1px solid var(--brick-transparent);
+}
+
 #price-list {
+    min-width: 320px;
+    padding: var(--price-list-padding);
+    margin-top: var(--overlap);
+    margin-inline: var(--price-list-margin-inline);
     color: var(--price-list-color);
+    background-color: var(--price-list-bg-color);
     border: 1px solid var(--price-list-color);
+    columns: 1 auto;
+    column-gap: var(--price-list-column-gap);
+    text-align: start;
+}
+
+#price-list h2 {
+    font-weight: var(--button-font-weight);
+}
+
+#price-list section {
+    break-inside: avoid;
+    margin-block-end: var(--price-list-section-margin-bottom);
 }
 
 .services {
@@ -461,6 +495,12 @@ ul {
     }
 }
 
+@media (min-width: 56rem) {
+    #price-list {
+        column-count: 2;
+    }
+}
+
 
 @media (min-width: 75rem) {
 
@@ -496,6 +536,10 @@ ul {
         flex-direction: row-reverse;
     }
 
+    .flex-column {
+        flex-direction: column;
+    }
+
     footer.flex-container{
         justify-content: space-evenly;
     }
@@ -514,5 +558,10 @@ ul {
     .overlap-bottom {
         margin-bottom: var(--overlap);
     }
+}
 
+@media (min-width: 90rem) {
+    #price-list {
+        column-count: 3;
+    }
 }
