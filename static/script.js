@@ -6,8 +6,10 @@ const carouselLength = document.querySelector(".carousel").children.length;
 const setStyle = document.documentElement.style;
 
 document.addEventListener("DOMContentLoaded", () => {
-
     toggleCarouselControls(Number(accessStyle.getPropertyValue(carouselPositionVar)));
+    window.addEventListener("resize", () => {
+        scrollCarousel(0);
+    });
     
     carouselControlLeft.addEventListener("click", () => {
         scrollCarousel(-1);
@@ -19,16 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function scrollCarousel(direction) {
-    const currentPosition = Number(accessStyle.getPropertyValue(carouselPositionVar));
-
-    setStyle.setProperty(carouselPositionVar, currentPosition + direction);
-    toggleCarouselControls(currentPosition + direction);
-}
-
-function toggleCarouselControls(position) {
+    let currentPosition = Number(accessStyle.getPropertyValue(carouselPositionVar));
     const carouselVisibleLength = Number(accessStyle.getPropertyValue("--carousel-visible-images"));
 
+    if (currentPosition >= carouselLength - carouselVisibleLength) currentPosition = carouselLength - carouselVisibleLength;
+
+    setStyle.setProperty(carouselPositionVar, currentPosition + direction);
+    toggleCarouselControls(currentPosition + direction, carouselVisibleLength);
+}
+
+function toggleCarouselControls(position, visibleLength) {
     position === 0 ? carouselControlLeft.setAttribute("disabled", "") : carouselControlLeft.removeAttribute("disabled");
-    position === carouselLength - carouselVisibleLength ?
+    position === carouselLength - visibleLength ?
         carouselControlRight.setAttribute("disabled", "") : carouselControlRight.removeAttribute("disabled");
 }
