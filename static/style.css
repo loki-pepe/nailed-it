@@ -228,7 +228,6 @@ body {
 
 .carousel-wrapper {
     overflow: hidden;
-    flex-direction: column;
 }
 .carousel {
     position: relative;
