@@ -10,6 +10,10 @@
     --curve-2: right -512px bottom 0;
     --curve-3: -512px 0;
 
+    /* Carousel settings */
+    --carousel-position: 0;
+    --carousel-visible-images: 1;
+
     /* Colors */
     --brick: hsl(10 34% 51%); /**/
     --brick-dark: hsl(10 34% 38%);
@@ -84,6 +88,8 @@
     --text-max-width: 28.5625rem;
     --business-content-flex-basis: 33.75rem;
     --business-content-max-width: 35.8125rem;
+    --carousel-img-size: clamp(18rem, 20vw + 14rem, 20rem);
+    --carousel-gap: 16px;
     --ig-logo-size: 1.5rem;
     --li-img-width: 8rem;
     --li-decoration-width: 32px;
@@ -97,6 +103,7 @@
     --main-column-gap: 125px;
     --card-row-gap: clamp(48px, 2.0356vw + 40.3664px, 56px);
     --card-column-gap: var(--main-column-gap);
+    --carousel-padding-block: 80px;
     --dict-marign-bottom: calc(-1 * (var(--body-font-size) * var(--body-line-height)));
     --flex-row-column-gap: 1rem;
     --footer-column-gap: clamp(130px, 9.375vw + 58px, 193px);
@@ -217,6 +224,29 @@ body {
 
 .card img {
     box-shadow: var(--shadow);
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    flex-direction: column;
+}
+.carousel {
+    position: relative;
+    left: calc(-1 * calc(var(--carousel-img-size) + var(--carousel-gap)) * var(--carousel-position));
+    transition: left 1s;
+    padding-block: var(--carousel-padding-block);
+    display: flex;
+    column-gap: var(--carousel-gap);
+    width: calc(var(--carousel-img-size) * var(--carousel-visible-images) + var(--carousel-gap) * calc(var(--carousel-visible-images) - 1));
+}
+.carousel img {
+    width: var(--carousel-img-size);
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+.carousel li {
+    padding: 0;
+    flex: auto 0 0;
 }
 
 .dict {
@@ -442,6 +472,11 @@ ul {
 }
 
 @media (min-width: 48rem) {
+    :root {
+        --carousel-visible-images: 3;
+        --carousel-img-size: clamp(10rem, 23.8095vw + -1.4286rem, 20rem);
+    }
+
     .curve-1 {
         background-image: url("./assets/images/patterns/pattern-curve-top-right.svg");
         background-repeat: no-repeat;
