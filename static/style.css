@@ -13,7 +13,8 @@
     /* Carousel settings */
     --carousel-position: 0;
     --carousel-visible-images: 1;
-    --carousel-transition-time: 1s;
+    --carousel-transition-time: none;
+    --carousel-transition-time-setting: 1s;
 
     /* Colors */
     --brick: hsl(10 34% 51%); /**/
