@@ -13,6 +13,7 @@
     /* Carousel settings */
     --carousel-position: 0;
     --carousel-visible-images: 1;
+    --carousel-transition-time: 1s;
 
     /* Colors */
     --brick: hsl(10 34% 51%); /**/
@@ -236,7 +237,7 @@ body {
 .carousel {
     position: relative;
     left: calc(-1 * calc(var(--carousel-img-size) + var(--carousel-gap)) * var(--carousel-position));
-    transition: left 1s;
+    transition: left var(--carousel-transition-time);
     padding-block: var(--carousel-padding-block);
     display: flex;
     column-gap: var(--carousel-gap);
@@ -496,6 +497,12 @@ ul {
     .inverted-color .button:hover {
         background-color: var(--button-bg-color);
         color: var(--button-color);
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    :root {
+        --carousel-transition-time: none;
     }
 }
 
