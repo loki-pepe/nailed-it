@@ -266,9 +266,6 @@ body {
     border: none;
     background-color: transparent;
 }
-.carousel-control:hover {
-    cursor: pointer;
-}
 .carousel-control:disabled {
     opacity: 0.35;
 }
@@ -490,6 +487,10 @@ ul {
     .button:hover {
         background-color: var(--button-bg-color-inverted);
         color: var(--button-color-inverted);
+    }
+
+    .carousel-control:not(:disabled):hover {
+        cursor: pointer;
     }
 
     .inverted-color .button:hover {
