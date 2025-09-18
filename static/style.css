@@ -16,8 +16,9 @@
 
     /* Colors */
     --brick: hsl(10 34% 51%); /**/
-    --brick-dark: hsl(10 34% 38%);
-    --brick-transparent: hsla(10, 32%, 41%, 0.5);
+    --brick-dark: hsl(10 34% 47%);
+    --brick-transparent-50: hsla(10, 32%, 41% / 0.5);
+    --brick-transparent-85: hsl(10 34% 38% / 0.85);
     --ebony-clay: hsl(218 21% 18%);
     --white: hsl(0 0% 100%);
     --shadow-brick: hsla(10, 34%, 20%, 0.5);
@@ -90,6 +91,7 @@
     --business-content-max-width: 35.8125rem;
     --carousel-img-size: clamp(18rem, 20vw + 14rem, 20rem);
     --carousel-gap: 16px;
+    --carousel-control-size: 2.5rem;
     --ig-logo-size: 1.5rem;
     --li-img-width: 8rem;
     --li-decoration-width: 32px;
@@ -104,6 +106,7 @@
     --card-row-gap: clamp(48px, 2.0356vw + 40.3664px, 56px);
     --card-column-gap: var(--main-column-gap);
     --carousel-padding-block: 80px;
+    --carousel-controls-column-gap: 40px;
     --dict-marign-bottom: calc(-1 * (var(--body-font-size) * var(--body-line-height)));
     --flex-row-column-gap: 1rem;
     --footer-column-gap: clamp(130px, 9.375vw + 58px, 193px);
@@ -241,21 +244,36 @@ body {
 }
 .carousel img {
     width: var(--carousel-img-size);
-    aspect-ratio: 1;
+    aspect-ratio: .75;
     object-fit: cover;
 }
 .carousel li {
     padding: 0;
     flex: auto 0 0;
 }
+
 .carousel-controls {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 100%;
-    padding-inline: 16px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    column-gap: var(--carousel-controls-column-gap);
+    position: relative;
+    top: calc(-0.5 * var(--carousel-padding-block))
+}
+.carousel-control {
+    width: var(--carousel-control-size);
+    aspect-ratio: 1;
+    border: none;
+    background-color: transparent;
+}
+.carousel-control:hover {
+    cursor: pointer;
+}
+.carousel-control:disabled {
+    opacity: 0.35;
+}
+.carousel-control svg {
+    fill: var(--theme-color);
 }
 
 .dict {
@@ -418,7 +436,7 @@ li:last-child {
     align-items: center;
     gap: var(--price-item-gap);
     padding: var(--price-item-padding);
-    border-bottom: 1px solid var(--brick-transparent);
+    border-bottom: 1px solid var(--brick-transparent-50);
 }
 
 #price-list {
@@ -482,7 +500,7 @@ ul {
 
 @media (min-width: 48rem) {
     :root {
-        --carousel-visible-images: 3;
+        --carousel-visible-images: 4;
         --carousel-img-size: clamp(10rem, 23.8095vw + -1.4286rem, 20rem);
     }
 
