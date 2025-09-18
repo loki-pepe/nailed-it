@@ -3,6 +3,8 @@ const carouselPositionVar = "--carousel-position";
 const carouselControlLeft = document.querySelector(".carousel-control#left");
 const carouselControlRight = document.querySelector(".carousel-control#right")
 const carouselLength = document.querySelector(".carousel").children.length;
+const carouselTransitionVar = "--carousel-transition-time";
+const carouselTransitionTime = accessStyle.getPropertyValue("--carousel-transition-time-setting");
 const setStyle = document.documentElement.style;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,9 +27,14 @@ function scrollCarousel(direction) {
     const carouselVisibleLength = Number(accessStyle.getPropertyValue("--carousel-visible-images"));
 
     if (currentPosition >= carouselLength - carouselVisibleLength) currentPosition = carouselLength - carouselVisibleLength;
+    if (direction !== 0) setStyle.setProperty(carouselTransitionVar, carouselTransitionTime);
 
     setStyle.setProperty(carouselPositionVar, currentPosition + direction);
     toggleCarouselControls(currentPosition + direction, carouselVisibleLength);
+
+    setTimeout(() => {
+        setStyle.setProperty(carouselTransitionVar, "none");
+    }, 500);
 }
 
 function toggleCarouselControls(position, visibleLength) {
