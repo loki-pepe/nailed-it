@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     carousel.addEventListener("pointerdown", e => {
+        e.preventDefault();
         touchStartX = e.clientX;
     });
     carousel.addEventListener("pointerup", e => {
